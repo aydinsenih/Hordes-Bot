@@ -18,8 +18,6 @@ class BrowserBot:
             self.driver.get("https://hordes.io")
             time.sleep(2)
         
-        
-
     def findCharacterName(self):
         try:
             CharacterName = self.driver.find_element_by_xpath("//*[@id='ufplayer']/div[2]/div[1]/div[1]/span[1]").text
@@ -67,9 +65,9 @@ class BrowserBot:
     
     def bot_warrior(self):
         try:
-            a = self.driver.find_elements_by_xpath("//*[@id='ufplayer']//div[@class = 'container  svelte-wo3pyh']//div[1]")
-            for i in a:
-                if "https://hordes.io/assets/ui/skills/24" in i.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] and i.text == "5'": #Enchantment
+            partyBuffs = self.driver.find_elements_by_xpath("//*[@id='ufplayer']//div[@class = 'container  svelte-wo3pyh']//div[1]")
+            for currentBuff in partyBuffs:
+                if "https://hordes.io/assets/ui/skills/24" in currentBuff.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] and i.text == "5'": #Enchantment
                     self.driver.find_element_by_xpath('/html/body').send_keys("1")
                     time.sleep(1.9)
                     self.driver.find_element_by_xpath('/html/body').send_keys("2")
@@ -79,11 +77,11 @@ class BrowserBot:
 
     def bot_rogue(self):
         try:
-            a = self.driver.find_elements_by_xpath("//*[@id='ufplayer']//div[@class = 'container  svelte-wo3pyh']//div[1]")
+            partyBuffs = self.driver.find_elements_by_xpath("//*[@id='ufplayer']//div[@class = 'container  svelte-wo3pyh']//div[1]")
             
-            for i in a:
+            for currentBuff in partyBuffs:
                 
-                if "https://hordes.io/assets/ui/skills/24" in i.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] and i.text == "5'": #Enchantment
+                if "https://hordes.io/assets/ui/skills/24" in currentBuff.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] and i.text == "5'": #Enchantment
                     self.driver.find_element_by_xpath('/html/body').send_keys("1")
                     time.sleep(1.9)
                     self.driver.find_element_by_xpath('/html/body').send_keys("2")
