@@ -2,29 +2,23 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome import service
 import time
-#import chromedriver_binary
 import pickle
 import threading
+import tkinter
+from tkinter import filedialog
+import getpass
+import os
 
 t1 = None
 tCheck = False
 
-class Login:
+class BrowserBot:
     def __init__(self, browserName):
+        if BrowserBot.browserProfileDirSet(self, browserName):
+            self.driver.get("https://hordes.io")
+            time.sleep(2)
         
-        if browserName == "Chrome":
-            chOptions = Options()
-            #chOptions.add_argument("--user-data-dir=C:\\Users\\aydin\\AppData\\Local\\Google\\Chrome\\User Data")
-            #chOptions.add_argument("--profile-directory=Profile 2")
-            ##chOptions.add_argument("--disable-extensions")
-            self.driver = webdriver.Chrome(options=chOptions)
-        if browserName == "Firefox":
-            fp = webdriver.FirefoxProfile('C:/Users/furka/AppData/Roaming/Mozilla/Firefox/Profiles/tvnjnckk.default-release')
-            self.driver = webdriver.Firefox(fp, executable_path="./firefox.exe")
         
-        self.driver.get("https://hordes.io")
-        
-        time.sleep(3)
 
     def findCharacterName(self):
         try:
@@ -32,24 +26,50 @@ class Login:
             return CharacterName
         except:
             return ""
+    
+    def browserProfileDirSet(self, browserName):
+        root = tkinter.Tk()
+        root.withdraw()
+        username = getpass.getuser()
+
+        if browserName == "Chrome":
+            try:
+                chOptions = Options()
+                chOptions.add_argument("--user-data-dir=C:/Users/"+username+"/AppData/Local/Google/Chrome/User Data")
+                self.driver = webdriver.Chrome(options=chOptions)
+                return True
+            except:
+                pass
+        if browserName == "Firefox":
+            #fp = filedialog.askdirectory(initialdir = "/users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/")
+            #fp = webdriver.FirefoxProfile('C:/Users/furka/AppData/Roaming/Mozilla/Firefox/Profiles/tvnjnckk.default-release')
+            for fprofile in os.listdir("/users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"):
+                if "release" in fprofile:
+                    fp = webdriver.FirefoxProfile("C:/Users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"+fprofile)
+                    print("C:/Users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"+fprofile)
+                    self.driver = webdriver.Firefox(firefox_profile=fp, executable_path="geckodriver.exe")
+                    print("true")
+                    return True
+        
+        return False
         
 
     def bot(self):
         #while not tCheck:
         characterClassImage = self.driver.find_element_by_xpath("//*[@id='ufplayer']/div[1]/img[1]").get_attribute("src")
         
-        if(characterClassImage == "https://hordes.io/assets/ui/classes/0.png"): #0:warrior, 1:mage, 2:rogue, 3:shaman
+        if("https://hordes.io/assets/ui/classes/0" in characterClassImage): #0:warrior, 1:mage, 2:rogue, 3:shaman
             self.bot_warrior()
-        elif(characterClassImage == "https://hordes.io/assets/ui/classes/2.png"): #webp - chrome : png - opera
+        elif("https://hordes.io/assets/ui/classes/2" in characterClassImage): #webp - chrome : png - opera
             self.bot_rogue()
-        elif(characterClassImage == "https://hordes.io/assets/ui/classes/3.png"):
+        elif("https://hordes.io/assets/ui/classes/3" in characterClassImage):
             self.bot_shaman()
     
     def bot_warrior(self):
         try:
             a = self.driver.find_elements_by_xpath("//*[@id='ufplayer']//div[@class = 'container  svelte-wo3pyh']//div[1]")
             for i in a:
-                if i.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] == "https://hordes.io/assets/ui/skills/24.jpg" and i.text == "5'": #Encantment
+                if "https://hordes.io/assets/ui/skills/24" in i.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] and i.text == "5'": #Enchantment
                     self.driver.find_element_by_xpath('/html/body').send_keys("1")
                     time.sleep(1.9)
                     self.driver.find_element_by_xpath('/html/body').send_keys("2")
@@ -63,7 +83,7 @@ class Login:
             
             for i in a:
                 
-                if i.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] == "https://hordes.io/assets/ui/skills/24.jpg" and i.text == "5'": #Encantment
+                if "https://hordes.io/assets/ui/skills/24" in i.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] and i.text == "5'": #Enchantment
                     self.driver.find_element_by_xpath('/html/body').send_keys("1")
                     time.sleep(1.9)
                     self.driver.find_element_by_xpath('/html/body').send_keys("2")
@@ -102,7 +122,7 @@ class Login:
             for element in partyframes:
                 image = element.find_elements_by_xpath(".//div[starts-with(@class,'container')]")
                 for i in image:
-                    if i.find_element_by_xpath(".//div[1]/img[1]").get_attribute("src").split("?")[0] == "https://hordes.io/assets/ui/skills/16.jpg":
+                    if  "https://hordes.io/assets/ui/skills/16" in i.find_element_by_xpath(".//div[1]/img[1]").get_attribute("src").split("?")[0]:
                         time.sleep(0.1)
                         self.driver.find_element_by_xpath('/html/body').send_keys("1")
                         time.sleep(1.9)
