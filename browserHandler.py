@@ -1,7 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome import service
 import time
-import chromedriver_binary
+#import chromedriver_binary
 import pickle
 import threading
 
@@ -9,43 +10,68 @@ t1 = None
 tCheck = False
 
 class Login:
-    def __init__(self):
-        chOptions = Options()
-        chOptions.add_argument("--user-data-dir=C:\\Users\\aydin\\AppData\\Local\\Google\\Chrome\\User Data")
-        chOptions.add_argument("--profile-directory=Profile 2")
-        #chOptions.add_argument("--disable-extensions")
-        self.driver = webdriver.Chrome(options=chOptions)
+    def __init__(self, browserName):
         
-        #self.driver.execute_script('window.localStorage.setItem("skillbarsettings","mrb")')
+        if browserName == "Chrome":
+            chOptions = Options()
+            #chOptions.add_argument("--user-data-dir=C:\\Users\\aydin\\AppData\\Local\\Google\\Chrome\\User Data")
+            #chOptions.add_argument("--profile-directory=Profile 2")
+            ##chOptions.add_argument("--disable-extensions")
+            self.driver = webdriver.Chrome(options=chOptions)
+        if browserName == "Firefox":
+            fp = webdriver.FirefoxProfile('C:/Users/furka/AppData/Roaming/Mozilla/Firefox/Profiles/tvnjnckk.default-release')
+            self.driver = webdriver.Firefox(fp, executable_path="./firefox.exe")
         
-        try:
-            skillbar = pickle.load(open("skillbar.pkl", "rb"))
-            print(skillbar)
-            self.driver.execute_script('window.localStorage.setItem("skillbarsettings","{0}")'.format(skillbar))
-        except:
-            print("Cookies not found") #expected result. dont need cookies anymore
         self.driver.get("https://hordes.io")
+        
         time.sleep(3)
 
-    def login(self, username, password):
+    def findCharacterName(self):
+        try:
+            CharacterName = self.driver.find_element_by_xpath("//*[@id='ufplayer']/div[2]/div[1]/div[1]/span[1]").text
+            return CharacterName
+        except:
+            return ""
         
-        self.driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div[2]/div').click()
-        self.driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div/div/a').click()
-        self.driver.find_element_by_xpath('//input[@type="email"]').send_keys(username)
-        self.driver.find_element_by_xpath('//*[@id="identifierNext"]/span/span').click()
-        time.sleep(4)
-        self.driver.find_element_by_xpath('//input[@type="password"]').send_keys(password)
-        self.driver.find_element_by_xpath('//*[@id="passwordNext"]/span').click()
-        time.sleep(3)
-    
-    def selectCharacterAndJoin(self):
-        self.driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div/div/div/div[2]/div[1]/p[1]').click() #select first character slot
-        time.sleep(2)
-        self.driver.find_element_by_xpath('//*[@id="hero"]/div[3]/div/div/div/div[3]').click()
-        time.sleep(5)
 
     def bot(self):
         #while not tCheck:
+        characterClassImage = self.driver.find_element_by_xpath("//*[@id='ufplayer']/div[1]/img[1]").get_attribute("src")
+        
+        if(characterClassImage == "https://hordes.io/assets/ui/classes/0.png"): #0:warrior, 1:mage, 2:rogue, 3:shaman
+            self.bot_warrior()
+        elif(characterClassImage == "https://hordes.io/assets/ui/classes/2.png"): #webp - chrome : png - opera
+            self.bot_rogue()
+        elif(characterClassImage == "https://hordes.io/assets/ui/classes/3.png"):
+            self.bot_shaman()
+    
+    def bot_warrior(self):
+        try:
+            a = self.driver.find_elements_by_xpath("//*[@id='ufplayer']//div[@class = 'container  svelte-wo3pyh']//div[1]")
+            for i in a:
+                if i.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] == "https://hordes.io/assets/ui/skills/24.jpg" and i.text == "5'": #Encantment
+                    self.driver.find_element_by_xpath('/html/body').send_keys("1")
+                    time.sleep(1.9)
+                    self.driver.find_element_by_xpath('/html/body').send_keys("2")
+                    time.sleep(1.9)
+        except:
+            pass
+
+    def bot_rogue(self):
+        try:
+            a = self.driver.find_elements_by_xpath("//*[@id='ufplayer']//div[@class = 'container  svelte-wo3pyh']//div[1]")
+            
+            for i in a:
+                
+                if i.find_element_by_xpath("./following::img").get_attribute("src").split("?")[0] == "https://hordes.io/assets/ui/skills/24.jpg" and i.text == "5'": #Encantment
+                    self.driver.find_element_by_xpath('/html/body').send_keys("1")
+                    time.sleep(1.9)
+                    self.driver.find_element_by_xpath('/html/body').send_keys("2")
+                    time.sleep(1.9)
+        except:
+            pass
+
+    def bot_shaman(self):
         partyframes = self.driver.find_elements_by_xpath("//div[starts-with(@class,'progressBar') and contains(@class, 'bghealth')]")
         charMana = self.driver.find_element_by_xpath("//*[@id='ufplayer']/div[2]/div[2]/div[1]/span[2]").text.split("/")
         if len(charMana) > 1 and ((int(charMana[1]) - int(charMana[0])) > 190): # for medium mana potion
@@ -61,30 +87,37 @@ class Login:
                 if(hpbarpx > 170):
                     continue
                 partyHPs = hpbarpx/168.5*100 # will become percentage
-                if partyHPs < 85:
+                if partyHPs < 75:
                     element.click()
                     time.sleep(0.2)
-                    for x in range(0, 3):
+                    self.driver.find_element_by_xpath('/html/body').send_keys("3")
+                    time.sleep(1.9)
+        except:
+            pass
+
+        #//*[@id="ufplayer"]/div[2]/div[2]/div[1] karakterin manasi every 30 sec
+
+        partyframes = self.driver.find_elements_by_xpath("//div[starts-with(@class,'buffarray party')]")
+        try:
+            for element in partyframes:
+                image = element.find_elements_by_xpath(".//div[starts-with(@class,'container')]")
+                for i in image:
+                    if i.find_element_by_xpath(".//div[1]/img[1]").get_attribute("src").split("?")[0] == "https://hordes.io/assets/ui/skills/16.jpg":
+                        time.sleep(0.1)
+                        self.driver.find_element_by_xpath('/html/body').send_keys("1")
+                        time.sleep(1.9)
                         self.driver.find_element_by_xpath('/html/body').send_keys("2")
                         time.sleep(1.9)
         except:
             pass
-    
-    #//*[@id="ufplayer"]/div[2]/div[2]/div[1] karakterin manasi every 30 sec
-    
-    def botStart(self):
-        global t1
-        #t1 = threading.Thread(target=Login.bot(self))
-        #t1.start()
-    
-    def botStop(self):
-        global t1
-        global tCheck
-        tCheck = True
+        
     
     def closeBrowser(self):
         self.driver.close()
-
-
-    def saveCookies(self):
-        pickle.dump(self.driver.execute_script('return window.localStorage.getItem("skillbarsettings")'), open("skillbar.pkl", "wb"))
+    
+    def isBrowserClose(self):
+        try:
+            self.driver.title
+            return False
+        except:
+            return True
