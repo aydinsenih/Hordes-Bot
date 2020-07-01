@@ -79,10 +79,17 @@ class BrowserBot:
         charMana = self.driver.find_element_by_xpath("//*[@id='ufplayer']/div[2]/div[2]/div[1]/span[2]").text.split("/")
         if len(charMana) > 1 and ((int(charMana[1]) - int(charMana[0])) > 190): # for medium mana potion
             self.driver.find_element_by_xpath('/html/body').send_keys("0")
-        # starttime = time.time()
-        # time.sleep(2)
-        # print(time.time()-starttime)
-        # print(charMana)
+        
+        try:
+            skillsControl = self.driver.find_elements_by_xpath("//img[starts-with(@class,'icon') and contains(@class, 'svelte-wo3pyh')]")
+            for skill in skillsControl:
+                if "skills/16" in skill.get_attribute("src"):
+                    self.driver.find_element_by_xpath('/html/body').send_keys("1")
+                    time.sleep(0.5)
+                    self.driver.find_element_by_xpath('/html/body').send_keys("2")
+        except:
+            pass
+
         try:
             for element in partyframes:
                 #print("width" + element.value_of_css_property('width')) 168.5px party hp box size while full hp
@@ -95,22 +102,6 @@ class BrowserBot:
                     time.sleep(0.2)
                     self.driver.find_element_by_xpath('/html/body').send_keys("3")
                     time.sleep(1.9)
-        except:
-            pass
-
-        #//*[@id="ufplayer"]/div[2]/div[2]/div[1] karakterin manasi every 30 sec
-
-        partyframes = self.driver.find_elements_by_xpath("//div[starts-with(@class,'buffarray party')]")
-        try:
-            for element in partyframes:
-                image = element.find_elements_by_xpath(".//div[starts-with(@class,'container')]")
-                for i in image:
-                    if  "https://hordes.io/assets/ui/skills/16" in i.find_element_by_xpath(".//div[1]/img[1]").get_attribute("src").split("?")[0]:
-                        time.sleep(0.1)
-                        self.driver.find_element_by_xpath('/html/body').send_keys("1")
-                        time.sleep(1.9)
-                        self.driver.find_element_by_xpath('/html/body').send_keys("2")
-                        time.sleep(1.9)
         except:
             pass
 
