@@ -1,19 +1,15 @@
 import wx
 import browserHandler
-import pickle
 import threading
 import time
-import tkinter
-from tkinter import filedialog
-import getpass
-import os
 
-loginClass = []
-t = []
 
 class Frame(wx.Frame):
     def __init__(self):
         super().__init__(parent = None, title = "Hordes.io bot",size = (420,350))
+        self.browserClass = []
+        self.t = []
+
         self.panel = wx.Panel(self)
         self.botNames = []
         self.Bind(wx.EVT_WINDOW_DESTROY, self.onDestroy)#destroy the panel
@@ -23,8 +19,11 @@ class Frame(wx.Frame):
         self.botlist = wx.ListCtrl(self.panel, style = wx.LC_REPORT|wx.BORDER_SUNKEN)
         self.botlist.InsertColumn(0, 'Bot name', width=80)
         self.botlist.InsertColumn(1, 'Status', width=80)
+        # self.botlist.InsertItem(0,"test")
+        # self.botlist.SetItemBackgroundColour(0,wx.RED)
 
-        botlist_refresh_btn = wx.Button(self.panel, label="Refresh Characters Data")
+        botlist_refresh_btn = wx.Button(self.panel, label="Refresh List/\nStop All Bots")
+        accept_request_btn = wx.Button(self.panel, label="Accept\nRequest")
         bot_start_btn = wx.Button(self.panel, label="Start")
         bot_stop_btn = wx.Button(self.panel, label="Stop")
         #sizer arrangement
@@ -34,6 +33,7 @@ class Frame(wx.Frame):
 
         sizer_refresh = wx.BoxSizer(wx.HORIZONTAL)
         sizer_refresh.Add(botlist_refresh_btn, flag=wx.LEFT, border=20)
+        sizer_refresh.Add(accept_request_btn, flag=wx.LEFT, border=20)
 
         sizer_buttons = wx.BoxSizer(wx.HORIZONTAL)
         sizer_buttons.Add(bot_start_btn, flag=wx.LEFT, border=20)
@@ -53,61 +53,56 @@ class Frame(wx.Frame):
         botlist_refresh_btn.Bind(wx.EVT_BUTTON, self.botlist_refresh)
         bot_start_btn.Bind(wx.EVT_BUTTON, self.bot_start)
         bot_stop_btn.Bind(wx.EVT_BUTTON, self.bot_stop)
+        accept_request_btn.Bind(wx.EVT_BUTTON, self.accept_request)
         
         open_browser.Bind(wx.EVT_BUTTON, self.login_press)
         
         self.Show()
 
     def login_press(self, event):
-        global loginClass
-        loginClass.append(browserHandler.BrowserBot(self.radiobox.GetStringSelection()))
+        self.browserClass.append(browserHandler.BrowserBot(self.radiobox.GetStringSelection()))
 
-        index = len(loginClass)-1
+        index = len(self.browserClass)-1
         self.botlist_insert(index, str(index))
         
-        global t
-        t.append(None)
+        self.t.append(None)
 
     def bot_start(self, event):
-        global t
         index = self.botlist.GetFocusedItem()
-
-        t[index] = threading.Thread(target=Frame.botTh,args=(self,"on"))
-        t[index].setDaemon(True)
-        t[index].start()
+        if index != -1:
+            self.t[index] = threading.Thread(target=Frame.botTh,args=(self,"on"))
+            self.t[index].setDaemon(True)
+            self.t[index].start()
         
     
     def bot_stop(self, event):
-        global t
         index = self.botlist.GetFocusedItem()
-
-        self.botlist.SetItem(index, 1, "Inactive")
-        t[index].tRun = False
-        t[index].join()
+        if index != -1:
+            self.botlist.SetItem(index, 1, "Inactive")
+            self.t[index].tRun = False
+            self.t[index].join()
     
-    def botTh(self,arg):
-        global loginClass
+    def botTh(self, arg):
         index = self.botlist.GetFocusedItem()
 
-        t[index] = threading.currentThread()
+        self.t[index] = threading.currentThread()###
 
         self.botlist.SetItem(index, 1, "Active")
         name = self.botlist.GetItemText(index)
 
         print("Bot " + name + " start!")
 
-        while getattr(t[index],"tRun",True):
-            loginClass[index].bot()
+        while getattr(self.t[index],"tRun",True):###
+            self.browserClass[index].bot()
             time.sleep(0.5)
         print("Bot " + name + " successfully stop!")
     
-    def botlist_refresh(self,event):
-        global loginClass
+    def botlist_refresh(self, event):
         self.botlist.DeleteAllItems()
         index = 0
-        newLoginClass = [x for x in loginClass if not x.isBrowserClose()]
-        loginClass = newLoginClass
-        for i in loginClass:
+        newBrowserClass = [x for x in self.browserClass if not x.isBrowserClose()]
+        self.browserClass = newBrowserClass
+        for i in self.browserClass:
             currrentName = i.findCharacterName()
             if currrentName != "":
                 self.botlist_insert(index, currrentName)
@@ -120,18 +115,20 @@ class Frame(wx.Frame):
         self.botlist.SetItem(index, 0, name)
         self.botlist.SetItem(index, 1, "Inactive")
     
+    def accept_request(self, event):#accept when clickable!
+        for i in self.browserClass:
+            i.acceptRequest()
+    
     def onDestroy(self, event):
-        global loginClass
-        global t
 
-        for currentT in t:
+        for currentT in self.t:
             if hasattr(currentT, 'tRun'):
                 currentT.tRun = False
                 currentT.join()
 
         Frame.botlist_refresh(self, event)
 
-        for i in loginClass:
+        for i in self.browserClass:
             i.closeBrowser()
         
         print("App destroyed.")

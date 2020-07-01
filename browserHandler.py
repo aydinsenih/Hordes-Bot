@@ -9,14 +9,10 @@ from tkinter import filedialog
 import getpass
 import os
 
-t1 = None
-tCheck = False
-
 class BrowserBot:
     def __init__(self, browserName):
         if BrowserBot.browserProfileDirSet(self, browserName):
             self.driver.get("https://hordes.io")
-            time.sleep(2)
         
     def findCharacterName(self):
         try:
@@ -34,7 +30,7 @@ class BrowserBot:
             try:
                 chOptions = Options()
                 chOptions.add_argument("--user-data-dir=C:/Users/"+username+"/AppData/Local/Google/Chrome/User Data")
-                self.driver = webdriver.Chrome(options=chOptions)
+                self.driver = webdriver.Chrome(options=chOptions, executable_path="chromedriver.exe")
                 return True
             except:
                 pass
@@ -44,16 +40,13 @@ class BrowserBot:
             for fprofile in os.listdir("/users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"):
                 if "release" in fprofile:
                     fp = webdriver.FirefoxProfile("C:/Users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"+fprofile)
-                    print("C:/Users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"+fprofile)
                     self.driver = webdriver.Firefox(firefox_profile=fp, executable_path="geckodriver.exe")
-                    print("true")
                     return True
         
         return False
         
 
     def bot(self):
-        #while not tCheck:
         characterClassImage = self.driver.find_element_by_xpath("//*[@id='ufplayer']/div[1]/img[1]").get_attribute("src")
         
         if("https://hordes.io/assets/ui/classes/0" in characterClassImage): #0:warrior, 1:mage, 2:rogue, 3:shaman
@@ -128,7 +121,12 @@ class BrowserBot:
                         time.sleep(1.9)
         except:
             pass
-        
+
+    def acceptRequest(self):
+        try:
+            self.driver.find_element_by_xpath("//div[starts-with(@class,'choice') and contains(@class,'svelte-cy0tay')]").click()
+        except:
+            pass
     
     def closeBrowser(self):
         self.driver.close()
