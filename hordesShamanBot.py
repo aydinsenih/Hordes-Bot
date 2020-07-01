@@ -9,7 +9,6 @@ class Frame(wx.Frame):
         super().__init__(parent = None, title = "Hordes.io bot",size = (420,350))
         self.browserClass = []
         self.t = []
-        # self.choices = ["1","2","3","4","5","6","7","8","9","0"]
 
         #service.py in selenium line 72 has to replace with below code
         #self.process = subprocess.Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=PIPE, shell=False, creationflags=0x08000000, close_fds=platform.system() != 'Windows')
@@ -23,10 +22,7 @@ class Frame(wx.Frame):
         self.botlist.InsertColumn(0, 'Bot name', width=80)
         self.botlist.InsertColumn(1, 'Status', width=80)
         st_info = wx.StaticText(self.panel, label="Revitalize slot 3\nBuffs slot 1 and 2")
-        # combo_rev = wx.Choice(self.panel, choices = self.choices)
-        # combo_buff1 = wx.Choice(self.panel, choices = self.choices)
-        # combo_buff2 = wx.Choice(self.panel, choices = self.choices)
-        
+
         # self.botlist.InsertItem(0,"test")
         # self.botlist.SetItemBackgroundColour(0,wx.RED)
 
