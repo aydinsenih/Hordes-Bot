@@ -35,8 +35,6 @@ class BrowserBot:
             except:
                 pass
         if browserName == "Firefox":
-            #fp = filedialog.askdirectory(initialdir = "/users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/")
-            #fp = webdriver.FirefoxProfile('C:/Users/furka/AppData/Roaming/Mozilla/Firefox/Profiles/tvnjnckk.default-release')
             for fprofile in os.listdir("/users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"):
                 if "release" in fprofile:
                     fp = webdriver.FirefoxProfile("C:/Users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"+fprofile)

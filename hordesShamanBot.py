@@ -9,16 +9,24 @@ class Frame(wx.Frame):
         super().__init__(parent = None, title = "Hordes.io bot",size = (420,350))
         self.browserClass = []
         self.t = []
+        # self.choices = ["1","2","3","4","5","6","7","8","9","0"]
 
+        #service.py in selenium line 72 has to replace with below code
+        #self.process = subprocess.Popen(cmd, stdin=PIPE, stdout=PIPE, stderr=PIPE, shell=False, creationflags=0x08000000, close_fds=platform.system() != 'Windows')
         self.panel = wx.Panel(self)
         self.botNames = []
         self.Bind(wx.EVT_WINDOW_DESTROY, self.onDestroy)#destroy the panel
 
         self.radiobox = wx.RadioBox(self.panel, label="Browser", choices = ["Chrome", "Firefox"])
-        open_browser = wx.Button(self.panel, label="Open Browser") 
+        open_browser = wx.Button(self.panel, label="Open Browser")
         self.botlist = wx.ListCtrl(self.panel, style = wx.LC_REPORT|wx.BORDER_SUNKEN)
         self.botlist.InsertColumn(0, 'Bot name', width=80)
         self.botlist.InsertColumn(1, 'Status', width=80)
+        st_info = wx.StaticText(self.panel, label="Revitalize slot 3\nBuffs slot 1 and 2")
+        # combo_rev = wx.Choice(self.panel, choices = self.choices)
+        # combo_buff1 = wx.Choice(self.panel, choices = self.choices)
+        # combo_buff2 = wx.Choice(self.panel, choices = self.choices)
+        
         # self.botlist.InsertItem(0,"test")
         # self.botlist.SetItemBackgroundColour(0,wx.RED)
 
@@ -30,6 +38,7 @@ class Frame(wx.Frame):
         sizer_browser = wx.BoxSizer(wx.VERTICAL)
         sizer_browser.Add(self.radiobox, flag=wx.LEFT | wx.TOP, border=20)
         sizer_browser.Add(open_browser, flag=wx.LEFT | wx.TOP, border=20)
+        sizer_browser.Add(st_info, flag=wx.LEFT | wx.TOP, border=20)
 
         sizer_refresh = wx.BoxSizer(wx.HORIZONTAL)
         sizer_refresh.Add(botlist_refresh_btn, flag=wx.LEFT, border=20)
