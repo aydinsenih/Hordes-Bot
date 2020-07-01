@@ -1,0 +1,371 @@
+1593525648753	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofiledJvOSr"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593525664214	Marionette	INFO	Listening on port 49789
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593525664668	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593525673338	FirefoxAccounts	ERROR	Rejected FxA webchannel message from remoteType = web
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593525774595	Marionette	INFO	Stopped listening on port 49789
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593542549790	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileeLR2fU"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593542552939	Marionette	INFO	Listening on port 60908
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593542553413	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593542631544	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileOF3fTq"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593542633652	Marionette	INFO	Listening on port 61016
+1593542633694	Marionette	WARN	TLS certificate errors will be ignored for this session
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593542729368	Marionette	INFO	Stopped listening on port 61016
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593542738736	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofile3Kj2C4"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593542740789	Marionette	INFO	Listening on port 61106
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593542740863	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593542795064	Marionette	INFO	Stopped listening on port 61106
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593542831022	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileR1JZJ1"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593542833360	Marionette	INFO	Listening on port 61209
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593542833645	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593542842551	FirefoxAccounts	ERROR	Rejected FxA webchannel message from remoteType = web
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593542856718	Marionette	INFO	Stopped listening on port 61209
+JavaScript error: chrome://global/content/backgroundPageThumbsContent.js, line 223: TypeError: docShell is null
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593542998729	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofilezPfKDp"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593543000817	Marionette	INFO	Listening on port 61309
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593543000915	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593543096741	Marionette	INFO	Stopped listening on port 61309
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593543478570	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofiletqKds9"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593543481027	Marionette	INFO	Listening on port 61428
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593543481187	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593543723670	Marionette	INFO	Stopped listening on port 61428
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593543945547	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileC1aStq"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593543948049	Marionette	INFO	Listening on port 61575
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593543948190	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593544884956	Marionette	INFO	Stopped listening on port 61575
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593545632400	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileZi2SBd"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593545634604	Marionette	INFO	Listening on port 62442
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593545635016	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593545646359	FirefoxAccounts	ERROR	Rejected FxA webchannel message from remoteType = web
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593545682384	Marionette	INFO	Stopped listening on port 62442
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593545728463	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofilenO4JTi"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593545730707	Marionette	INFO	Listening on port 62541
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593545731091	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593545936350	Marionette	INFO	Stopped listening on port 62541
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593545973837	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileu0wZm8"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593545976456	Marionette	INFO	Listening on port 62749
+1593545976497	Marionette	WARN	TLS certificate errors will be ignored for this session
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593546096157	Marionette	INFO	Stopped listening on port 62749
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593549162936	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileZljcvg"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593549165450	Marionette	INFO	Listening on port 63153
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593549165561	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593549174817	FirefoxAccounts	ERROR	Rejected FxA webchannel message from remoteType = web
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593549194735	Marionette	INFO	Stopped listening on port 63153
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593549260868	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofilepfWZ3T"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593549263131	Marionette	INFO	Listening on port 63271
+1593549263489	Marionette	WARN	TLS certificate errors will be ignored for this session
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593549311377	Marionette	INFO	Stopped listening on port 63271
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593551006667	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofilebMaHaI"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551009156	Marionette	INFO	Listening on port 63583
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551009302	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593551027082	FirefoxAccounts	ERROR	Rejected FxA webchannel message from remoteType = web
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript error: chrome://browser/content/aboutNetError.js, line 304: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+1593551034424	Marionette	INFO	Stopped listening on port 63583
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593551185925	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileBu7iZW"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551188063	Marionette	INFO	Listening on port 63669
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551188542	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593551219198	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofile5Meg1S"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551221514	Marionette	INFO	Listening on port 63757
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551221824	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593551365235	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileAEqi0G"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551367320	Marionette	INFO	Listening on port 63843
+1593551367356	Marionette	WARN	TLS certificate errors will be ignored for this session
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551380565	Marionette	INFO	Stopped listening on port 63843
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593551479185	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofilefS80AU"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551481283	Marionette	INFO	Listening on port 63915
+1593551481313	Marionette	WARN	TLS certificate errors will be ignored for this session
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551499347	Sync.ErrorHandler	ERROR	Some engines did not sync correctly.
+1593551500322	Marionette	INFO	Stopped listening on port 63915
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593551554188	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofilelLFLin"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551556303	Marionette	INFO	Listening on port 63996
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551556806	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593551569617	Marionette	INFO	Stopped listening on port 63996
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593551638876	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileQCmmrg"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551640970	Marionette	INFO	Listening on port 64072
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551641057	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593551656480	Sync.BrowserIDManager	ERROR	Non-authentication error in _fetchTokenForUser: TokenServerClientNetworkError({"error":{}})(resource://services-common/tokenserverclient.js:39:36) JS Stack trace: TokenServerClientNetworkError@tokenserverclient.js:62:16
+_tokenServerExchangeRequest@tokenserverclient.js:298:13
+1593551656482	Sync.ErrorHandler	ERROR	Sync encountered a login error
+1593551657731	Marionette	INFO	Stopped listening on port 64072
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593551677992	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofilemFnN3h"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551680214	Marionette	INFO	Listening on port 64149
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551680623	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593551689223	FirefoxAccounts	ERROR	Rejected FxA webchannel message from remoteType = web
+1593551692501	Marionette	INFO	Stopped listening on port 64149
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593551844190	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileIzEypi"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551846215	Marionette	INFO	Listening on port 64249
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551846314	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593551862780	FirefoxAccounts	ERROR	Rejected FxA webchannel message from remoteType = web
+1593551866289	Sync.ErrorHandler	ERROR	Some engines did not sync correctly.
+1593551867662	Marionette	INFO	Stopped listening on port 64249
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593551915243	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileQ2k57I"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593551917229	Marionette	INFO	Listening on port 64320
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593551917309	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593551925636	Marionette	INFO	Stopped listening on port 64320
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593552050946	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofilerrvkCG"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593552053011	Marionette	INFO	Listening on port 64388
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593552053115	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593552100866	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofile9Jf1lP"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593552102971	Marionette	INFO	Listening on port 64470
+1593552103002	Marionette	WARN	TLS certificate errors will be ignored for this session
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593552120289	Sync.ErrorHandler	ERROR	Sync encountered a login error
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1593552121058	Marionette	INFO	Stopped listening on port 64470
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593552143595	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofiled4eSmi"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593552145793	Marionette	INFO	Listening on port 64549
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593552146212	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593552156074	Marionette	INFO	Stopped listening on port 64549
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593552249322	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofilecu8Ok0"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593552251373	Marionette	INFO	Listening on port 64620
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593552251477	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593552273175	Marionette	INFO	Stopped listening on port 64620
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1593552293257	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\furka\\AppData\\Local\\Temp\\rust_mozprofileLuad24"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593552295445	Marionette	INFO	Listening on port 64701
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593552295876	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593555276146	Marionette	INFO	Stopped listening on port 64701
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1593552348079	Marionette	INFO	Listening on port 64804
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593552348298	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593555279694	Marionette	INFO	Stopped listening on port 64804
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+istening on port 64913
+Log warning: The log 'Services.Common.RESTRequest' is configured to use the preference 'services.common.log.logger.rest.request' - you must adjust the level by setting this preference, not by using the level setter
+1593552434256	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593552443540	FirefoxAccounts	ERROR	Rejected FxA webchannel message from remoteType = web
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+JavaScript warning: https://hordes.io/client.js?v=4002247, line 1: WebGL warning: drawElementsInstanced: Tex image TEXTURE_2D level 0 is incurring lazy initialization.
+1593555282895	Marionette	INFO	Stopped listening on port 64913
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
