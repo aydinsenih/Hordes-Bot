@@ -20,21 +20,24 @@ class BrowserBot:
     
     def browserProfileDirSet(self, browserName):
         username = getpass.getuser()
-
         if browserName == "Chrome":
             try:
                 chOptions = Options()
                 chOptions.add_argument("--user-data-dir=C:/Users/"+username+"/AppData/Local/Google/Chrome/User Data")
+                chOptions.add_argument("--profile-directory=Profile "+str(self.profile))
                 self.driver = webdriver.Chrome(options=chOptions, executable_path="chromedriver.exe")
                 return True
             except:
-                pass
+                print("chrome error")
         if browserName == "Firefox":
-            for fprofile in os.listdir("/users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"):
-                if "release" in fprofile:
-                    fp = webdriver.FirefoxProfile("C:/Users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"+fprofile)
-                    self.driver = webdriver.Firefox(firefox_profile=fp, executable_path="geckodriver.exe")
-                    return True
+            try:
+                for fprofile in os.listdir("/users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"):
+                    if "release" in fprofile:
+                        fp = webdriver.FirefoxProfile("C:/Users/"+username+"/AppData/Roaming/Mozilla/Firefox/Profiles/"+fprofile)
+                        self.driver = webdriver.Firefox(firefox_profile=fp, executable_path="geckodriver.exe")
+                        return True
+            except:
+                print("firefox error")
         
         return False
         
@@ -59,7 +62,7 @@ class BrowserBot:
                     self.driver.find_element_by_xpath('/html/body').send_keys("2")
                     time.sleep(1.9)
         except:
-            pass
+            print("warrior bot error")
 
     def bot_rogue(self):
         try:
@@ -72,7 +75,7 @@ class BrowserBot:
                     self.driver.find_element_by_xpath('/html/body').send_keys("2")
                     time.sleep(1.9)
         except:
-            pass
+            print("archer bot error")
 
     def bot_shaman(self):
         partyframes = self.driver.find_elements_by_xpath("//div[starts-with(@class,'progressBar') and contains(@class, 'bghealth')]")
@@ -80,19 +83,19 @@ class BrowserBot:
         if len(charMana) > 1 and ((int(charMana[1]) - int(charMana[0])) > 190): # for medium mana potion
             self.driver.find_element_by_xpath('/html/body').send_keys("0")
         
+        #haste and mimirs well
         try:
             skillsControl = self.driver.find_elements_by_xpath("//img[starts-with(@class,'icon') and contains(@class, 'svelte-wo3pyh')]")
             for skill in skillsControl:
                 if "skills/16" in skill.get_attribute("src"):
                     self.driver.find_element_by_xpath('/html/body').send_keys("1")
-                    time.sleep(0.5)
+                    time.sleep(1)
                     self.driver.find_element_by_xpath('/html/body').send_keys("2")
         except:
-            pass
+            print("shaman bot haste-mimirs error")
 
         try:
             for element in partyframes:
-                #print("width" + element.value_of_css_property('width')) 168.5px party hp box size while full hp
                 hpbarpx = float(element.value_of_css_property('width').replace("px","")) # or string_to_number can be used
                 if(hpbarpx > 170):
                     continue
@@ -103,13 +106,13 @@ class BrowserBot:
                     self.driver.find_element_by_xpath('/html/body').send_keys("3")
                     time.sleep(1.9)
         except:
-            pass
+            print("shaman heal bot error")
 
     def acceptRequest(self):
         try:
             self.driver.find_element_by_xpath("//div[starts-with(@class,'choice') and contains(@class,'svelte-cy0tay')]").click()
         except:
-            pass
+            print("accept request error")
     
     def closeBrowser(self):
         self.driver.close()

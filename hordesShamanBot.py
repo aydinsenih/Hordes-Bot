@@ -30,6 +30,7 @@ class Frame(wx.Frame):
         accept_request_btn = wx.Button(self.panel, label="Accept\nRequest")
         bot_start_btn = wx.Button(self.panel, label="Start")
         bot_stop_btn = wx.Button(self.panel, label="Stop")
+
         #sizer arrangement
         sizer_browser = wx.BoxSizer(wx.VERTICAL)
         sizer_browser.Add(self.radiobox, flag=wx.LEFT | wx.TOP, border=20)
@@ -82,6 +83,7 @@ class Frame(wx.Frame):
     
     def bot_stop(self, event):
         index = self.botlist.GetFocusedItem()
+        self.stop_bot(index)
         if index != -1:
             self.botlist.SetItem(index, 1, "Inactive")
             self.t[index].tRun = False
@@ -107,6 +109,7 @@ class Frame(wx.Frame):
         index = 0
         newBrowserClass = [x for x in self.browserClass if not x.isBrowserClose()]
         self.browserClass = newBrowserClass
+        self.stop_bot(-1)
         for i in self.browserClass:
             currrentName = i.findCharacterName()
             if currrentName != "":
@@ -119,6 +122,19 @@ class Frame(wx.Frame):
         self.botlist.InsertItem(index,str(index))
         self.botlist.SetItem(index, 0, name)
         self.botlist.SetItem(index, 1, "Inactive")
+    
+    def stop_bot(self, index):
+        if index != -1:
+            self.botlist.SetItem(index, 1, "Inactive")
+            self.t[index].tRun = False
+            self.t[index].join()
+        else:
+            for i in self.t:
+                try:
+                    i.tRun = False
+                    i.join()
+                except:
+                    pass
     
     def accept_request(self, event):#accept when clickable!
         for i in self.browserClass:
